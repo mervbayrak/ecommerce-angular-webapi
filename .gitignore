@@ -3,3 +3,15 @@
 ################################################################################
 
 /WebAPI/PurpleShop/.vs/PurpleShop/v16
+/WebAPI/PurpleShop/PurpleShop.Business/obj
+/WebAPI/PurpleShop/PurpleShop.Core/obj
+/WebAPI/PurpleShop/PurpleShop.DataAccess/obj
+/WebAPI/PurpleShop/PurpleShop.Entities/obj
+/WebAPI/PurpleShop/.vs/PurpleShop/DesignTimeBuild
+/WebAPI/PurpleShop/PurpleShop.WebAPI/obj
+/WebAPI/PurpleShop/.vs/PurpleShop/config
+/WebAPI/PurpleShop/PurpleShop.Business/bin/Debug/netcoreapp3.1
+/WebAPI/PurpleShop/PurpleShop.Core/bin/Debug/netcoreapp3.1
+/WebAPI/PurpleShop/PurpleShop.DataAccess/bin/Debug/netcoreapp3.1
+/WebAPI/PurpleShop/PurpleShop.Entities/bin/Debug/netcoreapp3.1
+/WebAPI/PurpleShop/PurpleShop.WebAPI/bin/Debug/netcoreapp3.1
