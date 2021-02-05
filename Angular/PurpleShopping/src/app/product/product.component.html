@@ -1,0 +1,53 @@
+<!-- Featured Section Begin -->
+<section class="featured">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-title">
+          <h2>Popüler Ürünler</h2>
+        </div>
+        <div class="featured__controls">
+          <ul>
+            <li class="active" data-filter="*">Tümü</li>
+            <li *ngFor="let category of categories" data-filter=".oranges">
+              {{ category.name }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row featured__filter">
+      <div
+        *ngFor="let product of products"
+        class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat"
+      >
+        <div class="featured__item">
+          <div
+            class="featured__item__pic set-bg"
+            *ngFor="let image of product['productImages']"
+            [style.background-image]="'url(' + image.url + ')'"
+          >
+            <ul class="featured__item__pic__hover">
+              <li>
+                <a href="#"><i class="fa fa-heart"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-retweet"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-shopping-cart"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="featured__item__text">
+            <h6>
+              <a href="#">{{ product.name }}</a>
+            </h6>
+            <h5>3000 TL</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Featured Section End -->

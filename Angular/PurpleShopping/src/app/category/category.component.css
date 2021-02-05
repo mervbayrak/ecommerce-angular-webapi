@@ -1,0 +1,46 @@
+nav {
+  font-family: auto;
+}
+
+ul {
+  list-style: none;
+}
+.cate-dropdown-base a {
+  margin: 15px;
+}
+.cate-dropdown-base i {
+  font-size: 16px;
+  color: #ffffff;
+  margin-right: 10px;
+}
+li {
+  background: #47d6c9;
+  color: #fff;
+  padding: 1rem;
+  transition-duration: 0.5s;
+}
+
+li a {
+  color: #fff;
+}
+
+ul li ul {
+  margin-top: 1rem;
+}
+ul li ul li ul {
+  margin: 0;
+  display: none;
+}
+ul li ul li ul li:hover,
+ul li ul li ul li:focus-within {
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+.cate-dropdown,
+.subcate-drowdown {
+  display: none !important;
+}
+.subcate-drowdown.show,
+.cate-dropdown.show {
+  display: block !important;
+}

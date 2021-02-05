@@ -1,0 +1,54 @@
+<!-- Hero Section Begin -->
+<section class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <nav role="navigation">
+          <ul class="cate-dropdown-base">
+            <li>
+              <a href="#" (click)="categoryClick()"
+                ><i class="fa fa-bars"></i>Kategoriler</a
+              >
+              <ul [ngClass]="[bntStyleCategory]" aria-label="submenu">
+                <li
+                  *ngFor="let category of categories; let i = index"
+                  (click)="subCategoryClick(i)"
+                >
+                  <a href="#">{{ category.name }}</a>
+                  <ul aria-label="submenu" class="subcate-drowdown">
+                    <li *ngFor="let subCategory of category['subCategories']">
+                      <a href="#">{{ subCategory.name }}</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-lg-9">
+        <div class="hero__search">
+          <div class="hero__search__form">
+            <form action="#">
+              <input type="text" placeholder="What do yo u need?" />
+              <button type="submit" class="site-btn">Ara</button>
+            </form>
+          </div>
+        </div>
+        <div
+          class="hero__item set-bg"
+          data-setbg="assets/img/hero/banner.png"
+          style="background-image: url('assets/img/banner2.png')"
+        >
+          <div class="hero__text">
+            <span>Purple E-Commerce</span>
+            <h2>Hızlı ve Güvenli <br />Alışveriş</h2>
+            <p>Aradığınız Her Şeyi Burdan Sipariş Verin</p>
+            <a href="#" class="primary-btn">Alışverişe Başla</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Hero Section End -->
