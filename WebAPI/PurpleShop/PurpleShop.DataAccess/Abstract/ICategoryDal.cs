@@ -9,7 +9,7 @@ namespace PurpleShop.DataAccess.Abstract
     public interface ICategoryDal : IRepository<Category>
     {
     }
-    public interface ISubCategoryDal : IRepository<SubCategory>
-    {
-    }
+    //public interface ISubCategoryDal : IRepository<SubCategory>
+    //{
+    //}
 }

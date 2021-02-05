@@ -12,6 +12,5 @@ namespace PurpleShop.Entities.Concrete
         public string Description { get; set; }
         public string Url { get; set; }
         public int ProductId { get; set; }
-        public virtual Product Product { get; set; }
     }
 }

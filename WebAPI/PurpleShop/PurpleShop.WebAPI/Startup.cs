@@ -12,10 +12,12 @@ using PurpleShop.Business.Concrete;
 using PurpleShop.DataAccess.Abstract;
 using PurpleShop.DataAccess.Concrete.EF;
 using PurpleShop.DataAccess.Concrete.EF.Context;
+using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using PurpleShop.Business.Mappings.AutoMapper;
 
 namespace PurpleShop.WebAPI
 {
@@ -32,6 +34,8 @@ namespace PurpleShop.WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddAutoMapper(typeof(CategoryProfile));
+            services.AddAutoMapper(typeof(ProductProfile));
             services.AddDbContext<PurpleDBContext>(x=>x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")), ServiceLifetime.Transient);
             services.AddSingleton<IProductDal, EfProductDal>();
             services.AddSingleton<ICategoryDal, EfCategoryDal>();

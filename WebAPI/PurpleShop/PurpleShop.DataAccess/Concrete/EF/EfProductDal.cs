@@ -13,12 +13,19 @@ namespace PurpleShop.DataAccess.Concrete.EF
 {
     public class EfProductDal : EfRepository<PurpleDBContext, Product>, IProductDal
     {
-        //public override List<Product> GetList(Expression<Func<Product, bool>> filter = null)
-        //{
-        //    return filter == null
-        //        ? base._context.Set<Product>().Include(x => x.ProducImages).ToList()
-        //        : base._context.Set<Product>().Where(filter).Include(x => x.ProducImages).ToList();
-        //}
+        public override List<Product> GetList(Expression<Func<Product, bool>> filter = null)
+        {
+            return filter == null
+                ? base._context.Set<Product>()
+                .Include(x => x.ProductImages)
+                .Include(x => x.Category)
+                .Include(x => x.Category.UpperCategories).ToList()
+
+                : base._context.Set<Product>().Where(filter)
+                .Include(x => x.ProductImages)
+                .Include(x => x.Category)
+                .Include(x => x.Category.UpperCategories).ToList();
+        }
     }
     public class EfProductPhotoDal : EfRepository<PurpleDBContext, ProductImage>, IProductPhotoDal
     {

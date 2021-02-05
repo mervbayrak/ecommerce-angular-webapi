@@ -11,6 +11,5 @@ namespace PurpleShop.Entities.Concrete
     //    public int FeatureId { get; set; }
     //    public virtual Product Product { get; set; }
     //    public virtual Feature Feature { get; set; }
-
     //}
 }

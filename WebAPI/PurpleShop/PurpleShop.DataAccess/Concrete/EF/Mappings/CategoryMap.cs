@@ -15,12 +15,12 @@ namespace PurpleShop.DataAccess.Concrete.EF.Mappings
             builder.HasKey(x => x.Id);
         }
     }
-    public class SubCategoryMap : IEntityTypeConfiguration<SubCategory>
-    {
-        public void Configure(EntityTypeBuilder<SubCategory> builder)
-        {
-            builder.ToTable(@"SubCategories");
-            builder.HasKey(x => x.Id);
-        }
-    }
+    //public class SubCategoryMap : IEntityTypeConfiguration<SubCategory>
+    //{
+    //    public void Configure(EntityTypeBuilder<SubCategory> builder)
+    //    {
+    //        builder.ToTable(@"SubCategories");
+    //        builder.HasKey(x => x.Id);
+    //    }
+    //}
 }

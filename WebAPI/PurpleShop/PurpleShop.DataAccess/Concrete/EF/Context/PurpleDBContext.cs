@@ -15,7 +15,7 @@ namespace PurpleShop.DataAccess.Concrete.EF.Context
         //DbSet<ProductFeature> ProductFeatures { get; set; }
         DbSet<ProductImage> ProductImages { get; set; }
         DbSet<Product> Products { get; set; }
-        DbSet<SubCategory> SubCategories { get; set; }
+        //DbSet<SubCategory> SubCategories { get; set; }
         public PurpleDBContext() { }
         public PurpleDBContext(DbContextOptions<PurpleDBContext> options) : base(options) { }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -29,7 +29,7 @@ namespace PurpleShop.DataAccess.Concrete.EF.Context
 
             modelBuilder.ApplyConfiguration(new CategoryMap());
             modelBuilder.ApplyConfiguration(new FeatureMap());
-            modelBuilder.ApplyConfiguration(new SubCategoryMap());
+            //modelBuilder.ApplyConfiguration(new SubCategoryMap());
             modelBuilder.ApplyConfiguration(new ProductMap());
             modelBuilder.ApplyConfiguration(new ProductImageMap());
         }

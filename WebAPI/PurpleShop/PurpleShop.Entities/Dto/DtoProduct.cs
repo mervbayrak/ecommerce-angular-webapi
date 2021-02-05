@@ -1,21 +1,17 @@
-﻿using PurpleShop.Core.Entities;
+﻿using PurpleShop.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PurpleShop.Entities.Concrete
+namespace PurpleShop.Entities.Dto
 {
-    public class Product : IEntity
+    public class DtoProduct
     {
-        public Product()
-        {
-            ProductImages = new List<ProductImage>();
-        }
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public int CategoryId { get; set; }
-        public virtual Category Category { get; set; }
+        public DtoCategory Category { get; set; }
         public List<ProductImage> ProductImages { get; set; }
     }
 }
