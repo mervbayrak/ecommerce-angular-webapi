@@ -15,9 +15,12 @@ namespace PurpleShop.DataAccess.Concrete.EF
     {
         public override List<Category> GetList(Expression<Func<Category, bool>> filter = null)
         {
-            return filter == null
-                ? base._context.Set<Category>().Include(x=>x.UpperCategories).ToList()
-                : base._context.Set<Category>().Where(filter).Include(x => x.UpperCategories).ToList();
+            using (var context = new PurpleDBContext())
+            {
+                return filter == null
+                ? context.Set<Category>().Include(x => x.UpperCategories).ToList()
+                : context.Set<Category>().Where(filter).Include(x => x.UpperCategories).ToList();
+            }
         }
     }
     //public class EfSubCategoryDal : EfRepository<PurpleDBContext, SubCategory>, ISubCategoryDal

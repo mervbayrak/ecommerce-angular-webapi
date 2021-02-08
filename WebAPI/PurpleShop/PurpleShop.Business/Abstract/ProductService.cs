@@ -10,5 +10,6 @@ namespace PurpleShop.Business.Abstract
     {
         Product Get(int id);
         List<DtoProduct> GetList();
+        List<DtoProduct> GetList(int? categoryId);
     }
 }

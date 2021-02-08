@@ -15,16 +15,21 @@ namespace PurpleShop.DataAccess.Concrete.EF
     {
         public override List<Product> GetList(Expression<Func<Product, bool>> filter = null)
         {
-            return filter == null
-                ? base._context.Set<Product>()
+            using (var context= new PurpleDBContext())
+            {
+                return filter == null
+                ? context.Set<Product>()
                 .Include(x => x.ProductImages)
+                .Include(x => x.Feature.FeatureElectronics)
                 .Include(x => x.Category)
                 .Include(x => x.Category.UpperCategories).ToList()
 
-                : base._context.Set<Product>().Where(filter)
+                : context.Set<Product>().Where(filter)
                 .Include(x => x.ProductImages)
+                .Include(x => x.Feature.FeatureElectronics)
                 .Include(x => x.Category)
                 .Include(x => x.Category.UpperCategories).ToList();
+            }
         }
     }
     public class EfProductPhotoDal : EfRepository<PurpleDBContext, ProductImage>, IProductPhotoDal

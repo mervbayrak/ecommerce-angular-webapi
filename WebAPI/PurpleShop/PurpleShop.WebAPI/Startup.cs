@@ -35,6 +35,7 @@ namespace PurpleShop.WebAPI
         {
             services.AddControllers();
             services.AddAutoMapper(typeof(CategoryProfile));
+            services.AddAutoMapper(typeof(FeatureProfile));
             services.AddAutoMapper(typeof(ProductProfile));
             services.AddDbContext<PurpleDBContext>(x=>x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")), ServiceLifetime.Transient);
             services.AddSingleton<IProductDal, EfProductDal>();

@@ -29,6 +29,7 @@ namespace PurpleShop.DataAccess.Concrete.EF.Context
 
             modelBuilder.ApplyConfiguration(new CategoryMap());
             modelBuilder.ApplyConfiguration(new FeatureMap());
+            modelBuilder.ApplyConfiguration(new FeatureElectronicMap());
             //modelBuilder.ApplyConfiguration(new SubCategoryMap());
             modelBuilder.ApplyConfiguration(new ProductMap());
             modelBuilder.ApplyConfiguration(new ProductImageMap());

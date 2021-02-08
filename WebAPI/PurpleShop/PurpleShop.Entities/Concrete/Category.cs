@@ -11,7 +11,7 @@ namespace PurpleShop.Entities.Concrete
         public string Name { get; set; }
         public bool IsMain { get; set; }
         public int UpperCategoryId { get; set; }
-        public string Image { get; set; }
+        public string Photo { get; set; }
         public virtual Category UpperCategory { get; set; }
         public List<Category> UpperCategories { get; set; }
     }

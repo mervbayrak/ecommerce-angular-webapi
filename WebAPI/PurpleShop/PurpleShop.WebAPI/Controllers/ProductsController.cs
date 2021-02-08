@@ -18,9 +18,9 @@ namespace PurpleShop.WebAPI.Controllers
         {
             _productService = productService;
         }
-        public ActionResult GetProducts()
+        public ActionResult GetProducts(int? categoryId)
         {
-            var products = _productService.GetList();
+            var products = _productService.GetList(categoryId);
             return Ok(products);
         }
     }

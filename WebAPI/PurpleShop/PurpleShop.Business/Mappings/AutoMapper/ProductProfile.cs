@@ -17,6 +17,7 @@ namespace PurpleShop.Business.Mappings.AutoMapper
                 .ForMember(dest => dest.Name, f => f.MapFrom(src => src.Name))
                 .ForMember(dest => dest.Description, f => f.MapFrom(src => src.Description))
                 .ForMember(dest => dest.ProductImages, f => f.MapFrom(src => src.ProductImages))
+                .ForMember(dest => dest.Feature, f => f.MapFrom(src => src.Feature))
                 .ForMember(dest => dest.Category, f => f.MapFrom(src => src.Category));
         }
     }

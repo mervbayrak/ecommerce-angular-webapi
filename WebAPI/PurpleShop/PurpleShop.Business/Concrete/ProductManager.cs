@@ -27,5 +27,11 @@ namespace PurpleShop.Business.Concrete
         {
             return _mapper.Map<List<DtoProduct>>(_productDal.GetList());
         }
+        public List<DtoProduct> GetList(int? categoryId)
+        {
+            return categoryId != null
+               ? _mapper.Map<List<DtoProduct>>(_productDal.GetList(m => m.CategoryId == categoryId))
+               : _mapper.Map<List<DtoProduct>>(_productDal.GetList());
+        }
     }
 }

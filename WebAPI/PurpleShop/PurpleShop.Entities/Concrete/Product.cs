@@ -16,6 +16,8 @@ namespace PurpleShop.Entities.Concrete
         public string Description { get; set; }
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
+        public int FeatureId { get; set; }
+        public Feature Feature { get; set; }
         public List<ProductImage> ProductImages { get; set; }
     }
 }

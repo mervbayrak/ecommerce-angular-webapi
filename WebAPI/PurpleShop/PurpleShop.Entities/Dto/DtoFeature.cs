@@ -3,30 +3,20 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PurpleShop.Entities.Concrete
+namespace PurpleShop.Entities.Dto
 {
-    public class Feature : IEntity
+    public class DtoFeature : IDto
     {
-        public Feature()
-        {
-            FeatureElectronics = new List<FeatureElectronic>();
-        }
         public int Id { get; set; }
         public int Price { get; set; }
         public int UnitsInStock { get; set; }
         public string PaymentOptions { get; set; }
-        public List<FeatureElectronic> FeatureElectronics { get; set; }
-
+        public List<DtoFeatureElectronic> FeatureElectronics { get; set; }
     }
-
-    //Burada bir ayrım yapılmalı measurement vs
-
-    //Elektronik Ürünler
-    public class FeatureElectronic : IEntity
+    public class DtoFeatureElectronic : IDto
     {
         public int Id { get; set; }
         public int FeatureId { get; set; }
-        public Feature Feature { get; set; }
         public string InternalMemory { get; set; }
         public string ScreenSize { get; set; }
         public string RAMCapacity { get; set; }
