@@ -1,28 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from "@angular/common/http" ;
-
+import { HttpClientModule } from '@angular/common/http';
+import { Ng5SliderModule } from 'ng5-slider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavComponent } from './nav/nav.component';
-import { CategoryComponent } from './category/category.component';
-import { ProductComponent } from './product/product.component';
-import { CategoryDetailsComponent } from './category/category-details/category-details.component';
+import { NavComponent } from './components/nav/nav.component';
+import { ShopComponent } from './components/shop/shop.component';
+import { HomeComponent } from './components/home/home.component';
+import { ShopCategoryComponent } from './components/shop/shop-category/shop-category.component';
+import { HomeProductComponent } from './components/home/home-product/home-product.component';
+import { HomeCategoryComponent } from './components/home/home-category/home-category.component';
+import { ShopProductComponent } from './components/shop/shop-product/shop-product.component';
+import { ShopProductSortPipe } from './components/shop/shop-product/pipes/shop-product-sort.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    CategoryComponent,
-    ProductComponent,
-    CategoryDetailsComponent
+    ShopComponent,
+    HomeComponent,
+    ShopCategoryComponent,
+    HomeProductComponent,
+    HomeCategoryComponent,
+    ShopProductComponent,
+    ShopProductSortPipe,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, Ng5SliderModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

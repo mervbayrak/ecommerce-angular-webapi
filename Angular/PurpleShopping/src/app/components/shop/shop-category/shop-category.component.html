@@ -1,0 +1,42 @@
+<!-- Hero Section Begin -->
+<section class="hero hero-normal">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <nav role="navigation">
+          <ul class="cate-dropdown-base">
+            <li>
+              <a (click)="categoryClick()"
+                ><i class="fa fa-bars"></i>Kategoriler</a
+              >
+              <ul [ngClass]="[cateDropdownClass]">
+                <li
+                  *ngFor="let category of categories; let i = index"
+                  (click)="subCategoryClick(i)"
+                >
+                  <a>{{ category.name }}</a>
+                  <ul aria-label="submenu" class="subcate-drowdown">
+                    <li *ngFor="let subCategory of category['subCategories']">
+                      <a>{{ subCategory.name }}</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-lg-9">
+        <div class="hero__search">
+          <div class="hero__search__form">
+            <form action="#">
+              <input type="text" placeholder="What do yo u need?" />
+              <button type="submit" class="site-btn">Ara</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Hero Section End -->

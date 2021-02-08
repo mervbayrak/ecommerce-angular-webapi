@@ -8,9 +8,19 @@
         </div>
         <div class="featured__controls">
           <ul>
-            <li class="active" data-filter="*">Tümü</li>
-            <li *ngFor="let category of categories" data-filter=".oranges">
-              {{ category.name }}
+            <li [ngClass]="[cateSelectAllClass]">
+              <a routerLink="/home">Tümü</a>
+            </li>
+            <li
+              *ngFor="let category of categories"
+              [class]="category.className"
+            >
+              <a
+                routerLink="/products/category/{{ category.id }}"
+                (click)="setCateListSelect(category.id)"
+              >
+                {{ category.name }}</a
+              >
             </li>
           </ul>
         </div>
@@ -43,7 +53,7 @@
             <h6>
               <a href="#">{{ product.name }}</a>
             </h6>
-            <h5>3000 TL</h5>
+            <h5>{{ product.feature.price }} TL</h5>
           </div>
         </div>
       </div>

@@ -36,6 +36,12 @@ ul li ul li ul li:focus-within {
   border: 1px solid #fff;
   cursor: pointer;
 }
+.cate-dropdown {
+  position: absolute;
+  z-index: 200;
+  width: 100%;
+  left: 0;
+}
 .cate-dropdown,
 .subcate-drowdown {
   display: none !important;
@@ -43,4 +49,8 @@ ul li ul li ul li:focus-within {
 .subcate-drowdown.show,
 .cate-dropdown.show {
   display: block !important;
+}
+.col-lg-3 {
+  padding-right: 0px;
+  padding-left: 0px;
 }

@@ -1,13 +1,14 @@
-export class Category{
-    id:number;
-    name:string;
-    isMain:boolean;
-    Image:string;
-    upperCategoryId:number;
-    upperCategories:DtoCategory[];
+export class Category {
+  id: number;
+  name: string;
+  isMain: boolean;
+  photo: string;
+  upperCategoryId: number;
+  upperCategories: DtoCategory[];
+  className: string;
 }
 
-export class DtoCategory{
-    id:number;
-    name:string;
+export class DtoCategory {
+  id: number;
+  name: string;
 }

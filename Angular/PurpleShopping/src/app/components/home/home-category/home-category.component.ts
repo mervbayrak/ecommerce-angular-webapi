@@ -1,23 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Category } from '../models/Category';
-import { CategoryService } from '../services/category.service';
+import { Category } from 'src/app/models/Category';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
-  selector: 'app-category',
-  templateUrl: './category.component.html',
-  styleUrls: ['./category.component.css'],
-  providers: [CategoryService],
+  selector: 'app-home-category',
+  templateUrl: './home-category.component.html',
+  styleUrls: ['./home-category.component.css'],
 })
-export class CategoryComponent implements OnInit {
+export class HomeCategoryComponent implements OnInit {
   constructor(private categoryService: CategoryService) {}
 
   categories: Category[];
-  bntStyleCategory: string;
+  cateDropdownClass: string;
 
   ngOnInit(): void {
     this.getCategories(true);
-    this.bntStyleCategory = 'cate-dropdown show';
+    this.cateDropdownClass = 'cate-dropdown show';
   }
   getCategories(isMain: boolean) {
     this.categoryService.getCategories(isMain).subscribe((data) => {
@@ -25,9 +23,9 @@ export class CategoryComponent implements OnInit {
     });
   }
   categoryClick() {
-    if (this.bntStyleCategory === 'cate-dropdown')
-      this.bntStyleCategory = 'cate-dropdown show';
-    else this.bntStyleCategory = 'cate-dropdown';
+    if (this.cateDropdownClass === 'cate-dropdown')
+      this.cateDropdownClass = 'cate-dropdown show';
+    else this.cateDropdownClass = 'cate-dropdown';
   }
   subCategoryClick(i: number): void {
     var element = document.getElementsByClassName('subcate-drowdown')[i];

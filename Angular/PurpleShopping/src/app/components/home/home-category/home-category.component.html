@@ -6,18 +6,18 @@
         <nav role="navigation">
           <ul class="cate-dropdown-base">
             <li>
-              <a href="#" (click)="categoryClick()"
+              <a (click)="categoryClick()"
                 ><i class="fa fa-bars"></i>Kategoriler</a
               >
-              <ul [ngClass]="[bntStyleCategory]" aria-label="submenu">
+              <ul [ngClass]="[cateDropdownClass]">
                 <li
                   *ngFor="let category of categories; let i = index"
                   (click)="subCategoryClick(i)"
                 >
-                  <a href="#">{{ category.name }}</a>
+                  <a>{{ category.name }}</a>
                   <ul aria-label="submenu" class="subcate-drowdown">
                     <li *ngFor="let subCategory of category['subCategories']">
-                      <a href="#">{{ subCategory.name }}</a>
+                      <a>{{ subCategory.name }}</a>
                     </li>
                   </ul>
                 </li>
@@ -38,13 +38,13 @@
         <div
           class="hero__item set-bg"
           data-setbg="assets/img/hero/banner.png"
-          style="background-image: url('assets/img/banner2.png')"
+          style="background-image: url('assets/img/banner3.png')"
         >
           <div class="hero__text">
             <span>Purple E-Commerce</span>
             <h2>Hızlı ve Güvenli <br />Alışveriş</h2>
             <p>Aradığınız Her Şeyi Burdan Sipariş Verin</p>
-            <a href="#" class="primary-btn">Alışverişe Başla</a>
+            <a routerLink="/shop" class="primary-btn">Alışverişe Başla</a>
           </div>
         </div>
       </div>
@@ -52,3 +52,19 @@
   </div>
 </section>
 <!-- Hero Section End -->
+
+<section class="categories">
+  <div class="slider">
+    <div class="slide" id="slide-1" *ngFor="let category of categories">
+      <div
+        class="categories__item set-bg"
+        [style.background]="'url(' + category.photo + ')'"
+      >
+        <h5>
+          <a href="#">{{ category.name }}</a>
+        </h5>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Categories Section End -->
