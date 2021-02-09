@@ -1,0 +1,36 @@
+<div class="header-cart">
+  <ul>
+    <li>
+      <a><i class="fa fa-heart"></i> <span>0</span></a>
+    </li>
+    <li>
+      <a (click)="modalOpenCart()"
+        ><i class="fa fa-shopping-bag"></i> <span>{{ carts.length }}</span></a
+      >
+      <div id="modalCart">
+        <div class="modalcarts">
+          <div class="cart-item" *ngFor="let cart of carts">
+            <div class="img-wrap">
+              <img [src]="cart.image" alt="" />
+            </div>
+            <span> {{ cart.productName }}</span
+            ><strong>{{ cart.qty }} x </strong>
+            <strong>{{ cart.price }} TL</strong>
+
+            <div class="cart-item-border"></div>
+            <div class="delete-item" (click)="deleteToCart(cart)"></div>
+          </div>
+        </div>
+        <button *ngIf="carts.length > 0; else cartEmpty" class="btncart">
+          Satın Al
+        </button>
+        <ng-template #cartEmpty>
+          <div style="color: black">Sepetiniz Boş</div>
+        </ng-template>
+      </div>
+    </li>
+  </ul>
+  <div class="header-cart-price">
+    Kasa: <span>{{ cartTotal }}</span>
+  </div>
+</div>

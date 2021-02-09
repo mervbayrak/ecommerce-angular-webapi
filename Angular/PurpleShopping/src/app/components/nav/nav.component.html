@@ -30,7 +30,7 @@
     <div class="row">
       <div class="col-lg-3">
         <div class="header-logo">
-          <a href="./index.html"
+          <a routerLink="/home"
             ><img src="assets/img/logo3.png" alt="" /> Purple Shopping</a
           >
         </div>
@@ -53,17 +53,7 @@
         </nav>
       </div>
       <div class="col-lg-2">
-        <div class="header-cart">
-          <ul>
-            <li>
-              <a href="#"><i class="fa fa-heart"></i> <span>1</span></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a>
-            </li>
-          </ul>
-          <div class="header-cart-price">Kasa: <span>150.00</span></div>
-        </div>
+        <app-cart></app-cart>
       </div>
     </div>
     <div class="humberger-open">

@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/models/Category';
 import { Product } from 'src/app/models/Product';
 import { CategoryService } from 'src/app/services/category.service';
+import { MessengerService } from 'src/app/services/messenger.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class HomeProductComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private categoryService: CategoryService,
-    private activatedRouter: ActivatedRoute
+    private activatedRouter: ActivatedRoute,
+    private messengerservice: MessengerService
   ) {}
   products: Product[];
   categories: Category[];
@@ -46,5 +48,8 @@ export class HomeProductComponent implements OnInit {
       else cat.className = '';
     }
     this.cateSelectAllClass = '';
+  }
+  addToCart(product) {
+    this.messengerservice.sendMsg(product);
   }
 }

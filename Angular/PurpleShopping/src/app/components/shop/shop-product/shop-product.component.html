@@ -5,7 +5,7 @@
       <div class="col-lg-3 col-md-5">
         <div class="sidebar">
           <div class="sidebar__item">
-            <h4>Department</h4>
+            <h4>Kategori</h4>
             <ul>
               <li *ngFor="let category of categories">
                 <a routerLink="/shop/category/{{ category.id }}">{{
@@ -188,6 +188,7 @@
               let product of products | shopProductSort: minPrice:maxPrice
             "
           >
+            <!-- <app-asd [productItem]="product"></app-asd> -->
             <div class="product__item">
               <div
                 class="product__item__pic set-bg"
@@ -203,7 +204,9 @@
                     <a href="#"><i class="fa fa-retweet"></i></a>
                   </li>
                   <li>
-                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                    <a (click)="addToCart(product)"
+                      ><i class="fa fa-shopping-cart"></i
+                    ></a>
                   </li>
                 </ul>
               </div>

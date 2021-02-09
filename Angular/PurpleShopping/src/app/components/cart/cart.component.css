@@ -1,0 +1,75 @@
+.cart-item {
+  padding: 11px 10px 5px 70px;
+  position: relative;
+  background: #fff;
+  -webkit-transition: all 1000ms ease-out;
+  -moz-transition: all 1000ms ease-out;
+  -ms-transition: all 1000ms ease-out;
+  -o-transition: all 1000ms ease-out;
+  transition: all 1000ms ease-out;
+}
+.cart-item .img-wrap {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border: 1px solid #edeff0;
+  float: left;
+  margin-left: -65px;
+  margin-top: -9px;
+}
+.cart-item .img-wrap img {
+  margin-top: 6px;
+}
+.cart-item img {
+  width: 100%;
+  position: relative;
+  top: -10px;
+}
+.cart-item span {
+  color: #393c45;
+  display: block;
+  font-size: 10px;
+}
+.cart-item strong {
+  color: #47d6c9;
+  color: #000000;
+  font-size: 13px;
+  margin-right: 10px;
+}
+.cart-item-border {
+  position: absolute;
+  bottom: 0;
+  left: 45px;
+  background: #edeff0;
+  height: 1px;
+  width: 230px;
+}
+.cart-item .delete-item {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/delete-item.png)
+    0 0 no-repeat;
+  width: 14px;
+  height: 14px;
+  float: right;
+  margin-top: 5px;
+}
+
+#modalCart {
+  visibility: hidden;
+  z-index: 2;
+  width: 250px;
+  background: #ebebeb;
+  position: absolute;
+  right: 0;
+  padding: 10px;
+}
+#modalCart .modalcarts {
+  max-height: 200px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.btncart {
+  background: #47d6c9;
+  color: white;
+  border: 0;
+  margin: 10px;
+}

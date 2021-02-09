@@ -5,6 +5,7 @@ import { Product } from 'src/app/models/Product';
 import { CategoryService } from 'src/app/services/category.service';
 import { ProductService } from 'src/app/services/product.service';
 import { Options, LabelType } from 'ng5-slider';
+import { MessengerService } from 'src/app/services/messenger.service';
 
 @Component({
   selector: 'app-shop-product',
@@ -15,7 +16,8 @@ export class ShopProductComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private categoryService: CategoryService,
-    private activatedRouter: ActivatedRoute
+    private activatedRouter: ActivatedRoute,
+    private messengerservice: MessengerService
   ) {}
   minPrice: number = 0;
   maxPrice: number = 20000;
@@ -69,5 +71,8 @@ export class ShopProductComponent implements OnInit {
         break;
       }
     }
+  }
+  addToCart(product) {
+    this.messengerservice.sendMsg(product);
   }
 }

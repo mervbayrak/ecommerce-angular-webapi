@@ -1010,7 +1010,7 @@ select {
 -----------------------*/
 
 .product {
-  padding-top: 80px;
+  padding-top: 20px;
   padding-bottom: 80px;
 }
 
@@ -1180,7 +1180,7 @@ select {
 
 .filter__item {
   padding-top: 45px;
-  border-top: 1px solid #ebebeb;
+  border-top: 0px solid #ebebeb;
   padding-bottom: 20px;
 }
 

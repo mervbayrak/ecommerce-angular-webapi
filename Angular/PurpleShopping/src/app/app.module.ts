@@ -12,6 +12,7 @@ import { HomeProductComponent } from './components/home/home-product/home-produc
 import { HomeCategoryComponent } from './components/home/home-category/home-category.component';
 import { ShopProductComponent } from './components/shop/shop-product/shop-product.component';
 import { ShopProductSortPipe } from './components/shop/shop-product/pipes/shop-product-sort.pipe';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ShopProductSortPipe } from './components/shop/shop-product/pipes/shop-p
     HomeCategoryComponent,
     ShopProductComponent,
     ShopProductSortPipe,
+    CartComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, Ng5SliderModule],
   providers: [],

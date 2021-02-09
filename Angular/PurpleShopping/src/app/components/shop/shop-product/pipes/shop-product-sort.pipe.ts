@@ -7,8 +7,6 @@ import { Product } from 'src/app/models/Product';
 export class ShopProductSortPipe implements PipeTransform {
   transform(value: Product[], minPrice?: number, maxPrice?: number): Product[] {
     minPrice = minPrice ? minPrice : 0;
-    debugger;
-
     return maxPrice
       ? value
         ? value.filter(
