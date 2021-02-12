@@ -1,2 +1,3 @@
 # ecommerce-angular-webapi
-.Net Core Web API and Angular 11 View
+
+![](https://github.com/mervbayrak/ecommerce-angular-webapi/blob/main/Angular/PurpleShopping/src/assets/img/PurpleShopping.gif)
