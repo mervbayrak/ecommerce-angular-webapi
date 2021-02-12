@@ -9,7 +9,4 @@ namespace PurpleShop.DataAccess.Abstract
     public interface IFeatureDal : IRepository<Feature>
     {
     }
-    public interface IFeatureElectronicDal : IRepository<FeatureElectronic>
-    {
-    }
 }

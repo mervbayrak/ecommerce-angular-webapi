@@ -12,7 +12,6 @@ namespace PurpleShop.Business.Mappings.AutoMapper
         public FeatureProfile()
         {
             CreateMap<Feature, DtoFeature>();
-            CreateMap<FeatureElectronic, DtoFeatureElectronic>();
         }
     }
 }

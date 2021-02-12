@@ -20,13 +20,13 @@ namespace PurpleShop.DataAccess.Concrete.EF
                 return filter == null
                 ? context.Set<Product>()
                 .Include(x => x.ProductImages)
-                .Include(x => x.Feature.FeatureElectronics)
+                .Include(x => x.Feature)
                 .Include(x => x.Category)
                 .Include(x => x.Category.UpperCategories).ToList()
 
                 : context.Set<Product>().Where(filter)
                 .Include(x => x.ProductImages)
-                .Include(x => x.Feature.FeatureElectronics)
+                .Include(x => x.Feature)
                 .Include(x => x.Category)
                 .Include(x => x.Category.UpperCategories).ToList();
             }

@@ -11,7 +11,4 @@ namespace PurpleShop.DataAccess.Concrete.EF
     public class EfFeatureDal : EfRepository<PurpleDBContext, Feature>, IFeatureDal
     {
     }
-    public class EfFeatureElectronicDal : EfRepository<PurpleDBContext, FeatureElectronic>, IFeatureElectronicDal
-    {
-    }
 }

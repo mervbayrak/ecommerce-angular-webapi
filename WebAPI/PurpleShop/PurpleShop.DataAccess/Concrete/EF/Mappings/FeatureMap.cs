@@ -15,12 +15,4 @@ namespace PurpleShop.DataAccess.Concrete.EF.Mappings
             builder.HasKey(x => x.Id);
         }
     }
-    public class FeatureElectronicMap : IEntityTypeConfiguration<FeatureElectronic>
-    {
-        public void Configure(EntityTypeBuilder<FeatureElectronic> builder)
-        {
-            builder.ToTable(@"FeatureElectronics");
-            builder.HasKey(x => x.Id);
-        }
-    }
 }
