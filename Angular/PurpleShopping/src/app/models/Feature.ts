@@ -3,14 +3,5 @@ export class Feature {
   price: number;
   unitInStock: number;
   paymentOptions: number;
-  featureElectronics: FeatureElectronic[];
-}
-export class FeatureElectronic {
-  id: number;
-  featureId: number;
-  internalMemory: string;
-  screenSize: string;
-  ramCapacity: string;
-  batteryPower: string;
-  cameraResolution: string;
+  colorName: string;
 }

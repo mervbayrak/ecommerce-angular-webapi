@@ -6,6 +6,8 @@ import { CategoryService } from 'src/app/services/category.service';
 import { ProductService } from 'src/app/services/product.service';
 import { Options, LabelType } from 'ng5-slider';
 import { MessengerService } from 'src/app/services/messenger.service';
+import { Operation } from 'src/app/models/enums/Operation';
+import { Color } from 'src/app/models/filters/Color';
 
 @Component({
   selector: 'app-shop-product',
@@ -28,9 +30,17 @@ export class ShopProductComponent implements OnInit {
       return '<b>' + value + '</b>';
     },
   };
+  operation: Operation = Operation.Default;
   products: Product[];
   categories: Category[];
   categoryId: number;
+  colors: Color[] = [
+    { name: 'Beyaz', colorcode: '#f8f9fa' },
+    { name: 'Siyah', colorcode: '#333' },
+    { name: 'Krem', colorcode: '#fbeab7' },
+    { name: 'Gümüş', colorcode: '#ebebeb' },
+  ];
+  colorName: string;
   ngOnInit(): void {
     this.getProducts();
     this.getCategories(true);
@@ -43,6 +53,7 @@ export class ShopProductComponent implements OnInit {
       });
     });
   }
+
   getCategories(isMain: boolean) {
     this.categoryService.getCategories(isMain).subscribe((data) => {
       this.categories = data;
@@ -51,28 +62,25 @@ export class ShopProductComponent implements OnInit {
   sort(event: any) {
     switch (event.target.value) {
       case 'Low': {
-        this.products = this.products.sort(
-          (low, high) => low.feature.price - high.feature.price
-        );
+        this.operation = Operation.Decreasing;
         break;
       }
 
       case 'High': {
-        this.products = this.products.sort(
-          (low, high) => high.feature.price - low.feature.price
-        );
+        this.operation = Operation.Increasing;
         break;
       }
 
       default: {
-        this.products = this.products.sort(
-          (low, high) => low.feature.price - high.feature.price
-        );
+        this.operation = Operation.Default;
         break;
       }
     }
   }
   addToCart(product) {
     this.messengerservice.sendMsg(product);
+  }
+  selectColor(color: Color) {
+    this.colorName = color.name;
   }
 }

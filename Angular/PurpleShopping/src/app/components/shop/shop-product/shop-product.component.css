@@ -4,3 +4,13 @@
 .ng5-slider .ng5-slider-selection {
   background: #47d6c9 !important;
 }
+.test {
+  background: 0 0;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  height: 14px;
+  width: 14px;
+  content: "";
+  border-radius: 50%;
+}

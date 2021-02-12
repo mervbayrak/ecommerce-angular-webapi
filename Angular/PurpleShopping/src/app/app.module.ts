@@ -13,6 +13,8 @@ import { HomeCategoryComponent } from './components/home/home-category/home-cate
 import { ShopProductComponent } from './components/shop/shop-product/shop-product.component';
 import { ShopProductSortPipe } from './components/shop/shop-product/pipes/shop-product-sort.pipe';
 import { CartComponent } from './components/cart/cart.component';
+import { ShopProductOrderbyPipe } from './components/shop/shop-product/pipes/shop-product-orderby.pipe';
+import { ShopProductFiltercolorPipe } from './components/shop/shop-product/pipes/shop-product-filtercolor.pipe';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { CartComponent } from './components/cart/cart.component';
     ShopProductComponent,
     ShopProductSortPipe,
     CartComponent,
+    ShopProductOrderbyPipe,
+    ShopProductFiltercolorPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, Ng5SliderModule],
   providers: [],
