@@ -15,4 +15,4 @@
 </table>
 
 ## [Live Demo](#live-demo)
-![](https://github.com/mervbayrak/ecommerce-angular-webapi/blob/main/Angular/PurpleShopping/src/assets/img/PurpleShopping.gif)
+![](https://github.com/mervbayrak/ecommerce-angular-webapi/blob/main/Angular/PurpleShopping/src/assets/img/PurpleShoppingg.gif)
