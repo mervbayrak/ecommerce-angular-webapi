@@ -15,12 +15,10 @@ import { Color } from 'src/app/models/filters/Color';
   styleUrls: ['./shop-product.component.css'],
 })
 export class ShopProductComponent implements OnInit {
-  constructor(
-    private productService: ProductService,
-    private categoryService: CategoryService,
-    private activatedRouter: ActivatedRoute,
-    private messengerservice: MessengerService
-  ) {}
+  operation: Operation = Operation.Default;
+  products: Product[];
+  categories: Category[];
+  categoryId: number;
   minPrice: number = 0;
   maxPrice: number = 20000;
   options: Options = {
@@ -30,10 +28,6 @@ export class ShopProductComponent implements OnInit {
       return '<b>' + value + '</b>';
     },
   };
-  operation: Operation = Operation.Default;
-  products: Product[];
-  categories: Category[];
-  categoryId: number;
   colors: Color[] = [
     { name: 'Beyaz', colorcode: '#f8f9fa' },
     { name: 'Siyah', colorcode: '#333' },
@@ -41,10 +35,19 @@ export class ShopProductComponent implements OnInit {
     { name: 'Gümüş', colorcode: '#ebebeb' },
   ];
   colorName: string;
+
+  constructor(
+    private productService: ProductService,
+    private categoryService: CategoryService,
+    private activatedRouter: ActivatedRoute,
+    private messengerservice: MessengerService
+  ) {}
+ 
   ngOnInit(): void {
     this.getProducts();
     this.getCategories(true);
   }
+
   getProducts() {
     this.activatedRouter.params.subscribe((params) => {
       this.categoryId = params['categoryId'];
@@ -59,6 +62,7 @@ export class ShopProductComponent implements OnInit {
       this.categories = data;
     });
   }
+
   sort(event: any) {
     switch (event.target.value) {
       case 'Low': {
@@ -77,9 +81,11 @@ export class ShopProductComponent implements OnInit {
       }
     }
   }
+
   addToCart(product) {
     this.messengerservice.sendMsg(product);
   }
+
   selectColor(color: Color) {
     this.colorName = color.name;
   }

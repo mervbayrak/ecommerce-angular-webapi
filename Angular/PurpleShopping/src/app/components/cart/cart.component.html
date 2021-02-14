@@ -18,7 +18,7 @@
             <strong>{{ cart.price }} TL</strong>
 
             <div class="cart-item-border"></div>
-            <div class="delete-item" (click)="deleteToCart(cart)"></div>
+            <div class="delete-item" (click)="deleteProductToCart(cart)"></div>
           </div>
         </div>
         <button *ngIf="carts.length > 0; else cartEmpty" class="btncart">

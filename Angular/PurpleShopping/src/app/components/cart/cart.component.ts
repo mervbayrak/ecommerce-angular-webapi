@@ -18,18 +18,12 @@ export class CartComponent implements OnInit {
       this.addProductToCart(product);
     });
   }
-  addProductToCart(product: Product) {
-    let productExits = false;
 
-    for (let i in this.carts) {
-      if (this.carts[i].productId == product.id) {
-        this.carts[i].qty++;
-        productExits = true;
-        this.cartTotal = this.cartTotal + product.feature.price;
-        break;
-      }
-    }
-    if (!productExits) {
+  addProductToCart(product: Product) {
+    const productExits = this.isAddedProductToCart(product.id);
+
+    if(!productExits)
+    {
       this.carts.push({
         productId: product.id,
         productName: product.name,
@@ -37,20 +31,38 @@ export class CartComponent implements OnInit {
         image: product.productImages[0].url,
         price: product.feature.price,
       });
-      this.cartTotal = this.cartTotal + product.feature.price;
     }
+
+    this.cartTotal = this.cartTotal + product.feature.price;
   }
-  deleteToCart(product) {
+
+  deleteProductToCart(product) {
     const index = this.carts.indexOf(product);
+
     if (index > -1) {
       this.carts.splice(index, 1);
       this.cartTotal = this.cartTotal - product.price * product.qty;
     }
+
+  }
+
+  isAddedProductToCart(productId: number): boolean {
+    for (let i in this.carts) {
+
+      if (this.carts[i].productId == productId) {
+        this.carts[i].qty++;
+        return true;
+      }
+
+    }
+    return false;
   }
 
   modalOpenCart() {
     var elm = document.getElementById('modalCart');
-    if (elm.style.visibility == 'visible') elm.style.visibility = 'hidden';
-    else elm.style.visibility = 'visible';
+    if (elm.style.visibility == 'visible')
+      elm.style.visibility = 'hidden';
+    else 
+      elm.style.visibility = 'visible';
   }
 }
