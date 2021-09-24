@@ -97,8 +97,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-            ]
+            "scripts": []
           }
         },
         "lint": {
@@ -129,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "PurpleShopping"
+  "defaultProject": "PurpleShopping",
+  "cli": {
+    "analytics": false
+  }
 }
