@@ -41,6 +41,7 @@ export class HomeProductComponent implements OnInit {
 
   getCategories(isMain: boolean) {
     this.categoryService.getCategories(isMain).subscribe((data) => {
+      console.log(data);
       this.categories = data;
       if (this.categoryId != null) 
         this.setCateListSelect(this.categoryId);

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Ng5SliderModule } from 'ng5-slider';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,17 @@ import { ShopProductSortPipe } from './components/shop/shop-product/pipes/shop-p
 import { CartComponent } from './components/cart/cart.component';
 import { ShopProductOrderbyPipe } from './components/shop/shop-product/pipes/shop-product-orderby.pipe';
 import { ShopProductFiltercolorPipe } from './components/shop/shop-product/pipes/shop-product-filtercolor.pipe';
+import { SettingsService } from './services/settings.service';
+import { HttpModule } from '@angular/http';
+import { LocalStorageUtils } from './helpers/local-storage.utils';
+import { TokenInterceptor } from './common/header-interceptor';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// Boot the endpoint file on init.
+export function initSettings(settingService: SettingsService): Function {
+  return () => settingService.load();
+}
 
 @NgModule({
   declarations: [
@@ -31,8 +42,17 @@ import { ShopProductFiltercolorPipe } from './components/shop/shop-product/pipes
     ShopProductOrderbyPipe,
     ShopProductFiltercolorPipe,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, Ng5SliderModule],
-  providers: [],
+  imports: [BrowserAnimationsModule, BrowserModule, AppRoutingModule, HttpClientModule, Ng5SliderModule, HttpModule, ToastrModule.forRoot()],
+  providers: [LocalStorageUtils, {
+    provide: APP_INITIALIZER,
+    useFactory: initSettings,
+    deps: [SettingsService],
+    multi: true
+  }, {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
